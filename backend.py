@@ -34,8 +34,6 @@ def _parsear_monto(monto):
     tiene_coma  = ',' in monto_str
  
     if tiene_punto and tiene_coma:
-        # Ambos separadores: el que va último es el decimal.
-        # COP: 1.200.000,50 → último es coma → decimal es coma.
         if monto_str.rfind(',') > monto_str.rfind('.'):
             limpio = monto_str.replace('.', '').replace(',', '.')
         else:
