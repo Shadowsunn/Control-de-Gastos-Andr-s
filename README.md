@@ -419,4 +419,4 @@ Funcionalidades pendientes identificadas durante el desarrollo:
 
 ## Licencia
 
-Uso personal. Proyecto privado de Andrés.
+Uso personal. Proyecto privado de Erick Cortés para el cliente Andrés (Ente ficticio creado para simular una petición formal de App).
