@@ -26,13 +26,6 @@ CATEGORIAS_DEFAULT = [
 ]
 
 def _parsear_monto(monto):
-    """
-    Convierte un monto ingresado en texto al float correspondiente.
-    Soporta formato COP (punto como miles, coma como decimal):
-    También acepta formato inglés con punto decimal:
-        '1200.50'      → 1200.5
-    Lanza ValueError si el formato no es reconocible.
-    """
     monto_str = str(monto).strip()
     if not re.match(r'^[\d.,]+$', monto_str):
         raise ValueError(f"El monto '{monto}' debe ser un número válido.")
@@ -66,7 +59,7 @@ def _parsear_monto(monto):
     return float(limpio)
  
  
-# Función para iniciar el programa con el archivo SQLite funcionando desde el inicio.
+# Función para iniciar el programa con el archivo SQLite funcionando desde el inicio
 def inicializar_db():
     try:
         with sqlite3.connect(DB_NAME) as conn:
@@ -87,7 +80,7 @@ def inicializar_db():
     except Exception as e:
         return False, f"Error inesperado: {e}"
  
-# Función para Agregar los gastos al programa.
+# Función para Agregar los gastos al programa
 def agregar_gasto(descripcion, categoria, monto, tipo):
     """
     Inserta un gasto nuevo en la base de datos.
@@ -138,7 +131,7 @@ def agregar_gasto(descripcion, categoria, monto, tipo):
     except Exception as e:
         return False, f"Error inesperado: {e}"
  
-# Función para obtener los gastos del dia.
+# Función para obtener los gastos del dia
 def obtener_gastos_dia(fecha=None):
     """
     Devuelve todos los gastos registrados de un día específico.
